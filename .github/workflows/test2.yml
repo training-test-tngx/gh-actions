@@ -6,9 +6,6 @@ name: NEW WORKFLOW 2!! 😊
 run-name: WORKFLOW FROM BRANCH FEAT/C!!
 
 on:
- push:
-  branches:
-  - feat/*
  workflow_dispatch:
   inputs:
     likeCars:
