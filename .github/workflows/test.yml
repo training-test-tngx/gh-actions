@@ -47,8 +47,8 @@ jobs:
   steps:
    - name: Run Echo
      run: |
-         echo "Hello ${inputs.name}!"
-            echo "You are ${inputs.age} years old."
-            echo "Do you have a car? ${inputs.hasCar}"
-            echo "Are you happy today? ${inputs.amHappy}"
-            echo "You like ${inputs.likesAnimals}."
+         echo "Hello ${{inputs.name}}!"
+            echo "You are ${{inputs.age}} years old."
+            echo "Do you have a car? ${{inputs.hasCar}}"
+            echo "Are you happy today? ${{inputs.amHappy}}"
+            echo "You like ${{inputs.likesAnimals}}."
