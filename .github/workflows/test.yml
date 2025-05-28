@@ -6,9 +6,9 @@ name: NEW!! ':rocket:'
 run-name: WORKFLOW FROM BRANCH FEAT/X!!
 
 on:
- push:
-  branches:
-  - feat/*
+ # push:
+ #  branches:
+ #  - feat/*
  workflow_dispatch:
   inputs:
     name:
@@ -35,6 +35,10 @@ on:
       - birds
       - reptiles
       - fish
+    environment:
+     type: environment
+     description: 'Select an environment'
+     required: false
 
 jobs:
  hello-world:
