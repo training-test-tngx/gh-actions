@@ -6,9 +6,9 @@ name: NEW!! ':rocket:'
 run-name: WORKFLOW FROM BRANCH FEAT/X!!
 
 on:
- # push:
- #  branches:
- #  - feat/*
+ push:
+  branches:
+  - feat/*
  workflow_dispatch:
   inputs:
     name:
