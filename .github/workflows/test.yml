@@ -1,7 +1,7 @@
 
-name: My workflow from branch feat/tngx
+name: NEW!!
 
-run-name: My workflow from branch feat/tngx
+run-name: WORKFLOW FROM BRANCH FEAT/X!!
 
 on:
  push:
@@ -10,8 +10,8 @@ on:
 
 jobs:
  hello-world:
-  name: Hello world
+  name: NEW HELLO WORLD JOB
   runs-on: ubuntu-latest
   steps:
    - name: Run Echo
-     run: echo "Hello world from my first workflow"
+     run: echo "!!!!! NEW !!!!!"
