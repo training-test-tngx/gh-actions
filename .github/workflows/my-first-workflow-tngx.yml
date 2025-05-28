@@ -1,6 +1,6 @@
-name: Thanhs first workflow (branch feat/tngx2)
+name: Workflow from branch feat/tngx2
 
-run-name: My first workflow (branch feat/tngx2)
+run-name: My workflow from branch feat/tngx2
 
 on:
  push:
