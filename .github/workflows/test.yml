@@ -1,0 +1,16 @@
+name: My workflow from branch feat/tngx
+
+run-name: My workflow from branch feat/tngx
+
+on:
+ push:
+  branches:
+  - feat/*
+
+jobs:
+ hello-world:
+  name: Hello world
+  runs-on: ubuntu-latest
+  steps:
+   - name: Run Echo
+     run: echo "Hello world from my first workflow"
