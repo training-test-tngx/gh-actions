@@ -1,17 +1,54 @@
+﻿
+####### This is a comment ###########
 
-name: My workflow from branch feat/tngx
+name: NEW!! 😊
 
-run-name: My workflow from branch feat/tngx
+run-name: WORKFLOW FROM BRANCH FEAT/X!!
 
 on:
  push:
   branches:
   - feat/*
+ workflow_dispatch:
+  inputs:
+    name:
+     description: 'Your name'
+     required: true
+    age:
+     description: 'Your age'
+     required: false
+     default: '18'
+    hasCar:
+     description: 'Do you have a car?'
+     required: false
+     default: 'false'
+    amHappy:
+     description: 'I am happy today'
+     required: true
+     type: boolean
+    likesAnimals:
+     description: 'What animals do you like?'
+     type: choice
+     options:
+      - cats
+      - dogs
+      - birds
+      - reptiles
+      - fish
+    environment:
+     type: environment
+     description: 'Select an environment'
+     required: false
 
 jobs:
  hello-world:
-  name: Hello world
+  name: NEW HELLO WORLD JOB
   runs-on: ubuntu-latest
   steps:
    - name: Run Echo
-     run: echo "Hello world from my first workflow"
+     run: |
+         echo "Hello ${inputs.name}!"
+            echo "You are ${inputs.age} years old."
+            echo "Do you have a car? ${inputs.hasCar}"
+            echo "Are you happy today? ${inputs.amHappy}"
+            echo "You like ${inputs.likesAnimals}."
