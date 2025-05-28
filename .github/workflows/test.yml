@@ -3,7 +3,7 @@
 
 name: NEW!! 😊
 
-run-name: WORKFLOW FROM BRANCH FEAT/X!!
+run-name: '>>> MODIFIED WORKFLOW FROM BRANCH FEAT/C!!'
 
 on:
  push:
@@ -14,31 +14,6 @@ on:
     name:
      description: 'Your name'
      required: true
-    age:
-     description: 'Your age'
-     required: false
-     default: '18'
-    hasCar:
-     description: 'Do you have a car?'
-     required: false
-     default: 'false'
-    amHappy:
-     description: 'I am happy today'
-     required: true
-     type: boolean
-    likesAnimals:
-     description: 'What animals do you like?'
-     type: choice
-     options:
-      - cats
-      - dogs
-      - birds
-      - reptiles
-      - fish
-    environment:
-     type: environment
-     description: 'Select an environment'
-     required: false
 
 jobs:
  hello-world:
@@ -47,8 +22,4 @@ jobs:
   steps:
    - name: Run Echo
      run: |
-         echo "Hello ${{inputs.name}}!"
-            echo "You are ${{inputs.age}} years old."
-            echo "Do you have a car? ${{inputs.hasCar}}"
-            echo "Are you happy today? ${{inputs.amHappy}}"
-            echo "You like ${{inputs.likesAnimals}}."
+         echo "Guten Morgen ${{inputs.name}}!"
