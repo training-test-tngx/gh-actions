@@ -16,4 +16,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Run Echo
-     run: echo "!!!!! NEW !!!!!"
+     run: echo "!!!!! NEW !!!!! :rocket:"
