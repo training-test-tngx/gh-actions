@@ -1,4 +1,4 @@
-
+﻿
 ####### This is a comment ###########
 
 name: NEW!! ':rocket:'
@@ -16,4 +16,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Run Echo
-     run: echo "!!!!! NEW !!!!! :rocket:"
+     run: echo "!!!!! NEW !!!!! 😊"
