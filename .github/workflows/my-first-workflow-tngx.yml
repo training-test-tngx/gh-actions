@@ -1,0 +1,16 @@
+name: Thanhs first workflow
+
+run-name: My first workflow (this comes from run name)
+
+on:
+ push:
+  branches:
+  - feat/*
+
+jobs:
+ hello-world:
+  name: Hello world
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checkout code
+     run: echo "Hello world from my first workflow"
