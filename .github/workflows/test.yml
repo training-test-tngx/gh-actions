@@ -9,6 +9,32 @@ on:
  push:
   branches:
   - feat/*
+ workflow_dispatch:
+  inputs:
+    name:
+     description: 'Your name'
+     required: true
+    age:
+     description: 'Your age'
+     required: false
+     default: '18'
+    hasCar:
+     description: 'Do you have a car?'
+     required: false
+     default: 'false'
+    amHappy:
+     description: 'I am happy today'
+     required: true
+     type: boolean
+    likesAnimals:
+     description: 'What animals do you like?'
+     type: choice
+     options:
+      - cats
+      - dogs
+      - birds
+      - reptiles
+      - fish
 
 jobs:
  hello-world:
@@ -16,4 +42,9 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Run Echo
-     run: echo "!!!!! NEW !!!!! 😊"
+     run: |
+         echo "Hello ${inputs.name}!"
+            echo "You are ${inputs.age} years old."
+            echo "Do you have a car? ${inputs.hasCar}"
+            echo "Are you happy today? ${inputs.amHappy}"
+            echo "You like ${inputs.likesAnimals}."
