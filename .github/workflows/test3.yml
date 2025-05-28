@@ -8,10 +8,6 @@ run-name: WORKFLOW 3 FROM BRANCH FEAT/C!!
 on:
  repository_dispatch:
   types: [test]
-  inputs:
-    name:
-     description: 'Your name'
-     required: true
 
 jobs:
  hello-world:
@@ -20,4 +16,4 @@ jobs:
   steps:
    - name: Run Echo
      run: |
-            echo "Good afternoon ${{inputs.name}}."
+            echo "Good afternoon ${{github.event.client_payload.name}}."
