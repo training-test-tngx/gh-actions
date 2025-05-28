@@ -13,4 +13,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Checkout code
-     run: echo "Hello world from my first workflow"
+     run: echo "Hello world from my first workflow ${GITHUB_WORKFLOW} on branch ${GITHUB_REF}"
