@@ -109,21 +109,15 @@ jobs:
           echo '${{ toJson(github) }}'
     
   # EXERCISE 2b: 
-  demo3-run-only-on-windows:
+  demo3-show-runner-os:
     runs-on: linux
-    if: ${{ runner.os == 'Windows' }}
     needs: demo2
     steps:
       - name: Run only on Windows
+        if: ${{ runner.os == 'Windows' }}
         run: |
           echo "This job runs only on Windows!"
           echo "Runner OS: $env:RUNNER_OS"
-
-  demo3-run-only-on-linux:
-    runs-on: linux
-    if: ${{ runner.os == 'Linux' }}
-    needs: demo2
-    steps:
       - name: Run only on Linux
         run: |
           echo "This job runs only on Linux!"
