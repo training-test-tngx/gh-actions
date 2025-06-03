@@ -103,9 +103,6 @@ jobs:
       - name: How do you find GitHub Actions?
         run: |
           echo "How do you find GitHub Actions? ${{ inputs.howDoYouFindGitHubActions }}"
-          echo "You selected (2): $INPUTS_HOWDOYOUFINDGITHUBACTIONS"
-          echo "You selected (3): ${{ GITHUB_EVENT_INPUTS_HOWDOYOUFINDGITHUBACTIONS }}"
-          echo "You selected (4): ${{ GITHUB_EVENT_INPUTS_HOW_DO_YOU_FIND_GITHUB_ACTIONS }}"
       - name: Github event name
         run: |
           echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
