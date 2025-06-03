@@ -1,5 +1,5 @@
 # GitHub actions demo for triggers
-name: GitHub Actions Demo 1 - Triggers
+name: GitHub Actions Demo 1 - Triggers - FULL
 run-name: ${{ github.actor }} is learning GitHub Actions! 🚀
 on:
   # Trigger on push to main branch
