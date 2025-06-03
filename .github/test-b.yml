@@ -1,6 +1,0 @@
-name: Test b
-on:
-  workflow_dispatch:
-jobs:
-  demo:
-    runs-on: ubuntu-latest
