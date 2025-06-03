@@ -44,7 +44,7 @@ on:
         description: 'What is your name?'
         required: true
         default: 'World'
-      feeingGood:
+      feelingGood:
         description: 'Are you feeling good?'
         required: false
         type: boolean
@@ -62,7 +62,12 @@ on:
   repository_dispatch:
     types: [custom-event]
       
-      
+
+env:
+  # Set a default greeting message
+  GREETING: 'Hiiii'
+  # Set a default name
+  NAME: 'My friend' 
 
 jobs:
   demo1:
@@ -82,8 +87,14 @@ jobs:
         env:
           GREETING: ${{ inputs.greeting }}
           NAME: ${{ inputs.name }}
-      - name: Feeling good?
-        run: echo "Are you feeling good? ${{ inputs.feeingGood }} $NAME!"
+      - name: $NAME, Feeling good?
+        run: echo "Are you feeling good? ${{ inputs.feelingGood }}"
+      - name: Run if feeling good
+        if: ${{ inputs.feelingGood == 'true' }}
+        run: echo "Great! Let's continue with the workflow."
+      - name: Run if not feeling good
+        if: ${{ inputs.feelingGood != 'true' }}
+        run: echo "No worries, we can take it easy."
       - name: How do you find GitHub Actions?
         run: echo "How do you find GitHub Actions? ${{ inputs.howDoYouFindGitHubActions }}"
       - name: Github event name
