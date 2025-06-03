@@ -1,5 +1,8 @@
 name: Add file and push to feature branch
 on:
+  push:
+    branches:
+      - feat/workflow-demo  # 👈 This workflow runs on pushes to the 'feat/workflow-demo' branch
   workflow_dispatch:
 
 permissions:
