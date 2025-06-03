@@ -143,6 +143,8 @@ jobs:
         run: |
           echo "Tool name: ${{ vars.TOOL_NAME}}"
           echo "Tool version: ${{ vars.TOOL_VERSION}}"
+      - name: Show environment secrets
+        run: |
           echo "Database connection string: ${{ secrets.DATABASE_CONNECTION_STRING}}"
       
 
