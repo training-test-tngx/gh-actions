@@ -77,6 +77,7 @@ jobs:
         run: echo "Hello, ${{ github.actor }}!"
       - name: Say goodbye
         run: echo "And goodbye!"
+
   # EXERCISE 2: Add more jobs and steps to use the inputs from the workflow_dispatch event
   demo2:
     runs-on: ubuntu-latest
@@ -100,9 +101,13 @@ jobs:
         if: ${{ inputs.feelingGood != 'true' }}
         run: echo "No worries, we can take it easy."
       - name: How do you find GitHub Actions?
-        run: echo "How do you find GitHub Actions? ${{ inputs.howDoYouFindGitHubActions }}"
+        run: |
+          echo "How do you find GitHub Actions? ${{ inputs.howDoYouFindGitHubActions }}"
+          echo "You selected: $INPUT_HOW_DO_YOU_FIND_GITHUB_ACTIONS"
       - name: Github event name
-        run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+        run: |
+          echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+          echo "Github event name from environment: $GITHUB_EVENT_NAME"
       - name: Full github event
         run: |
           echo "Full github context:"
@@ -122,6 +127,24 @@ jobs:
         run: |
           echo "This job runs only on Linux!"
           echo "Runner OS: $RUNNER_OS"
+  
+  # EXERCISE 3: Environments
+  demo4-environemnts:
+    runs-on: ubuntu-latest
+    environment: production
+    needs: demo3-show-runner-os
+    steps:
+      - name: Show environment
+        run: |
+          echo "This job is running in the production environment!"
+          echo "Environment: ${{ job.environment }}"
+          echo "Environment URL: ${{ job.environment_url }}"
+      - name: Show environment configuation variables
+        run: |
+          echo "Tool name: ${{ vars.TOOL_NAME}}"
+          echo "Tool version: ${{ vars.TOOL_VERSION}}"
+          echo "Database connection string: ${{ secrets.DATABASE_CONNECTION_STRING}}"
+      
 
       
       
