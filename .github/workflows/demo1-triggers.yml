@@ -108,7 +108,7 @@ jobs:
           echo "Full github context:"
           echo '${{ toJson(github) }}'
     
-  # EXERCISE 2b: 
+  # EXERCISE 2b: Environment variables
   demo3-show-runner-os:
     runs-on: ubuntu-latest
     needs: demo2
