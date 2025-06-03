@@ -1,0 +1,28 @@
+name: Add file and push to feature branch
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write  # Needed for pushing
+
+jobs:
+  create-file-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout feature branch
+        uses: actions/checkout@v4
+        with:
+          ref: feat/workflow-demo  # 👈 This checks out the 'feat/workflow-demo' branch
+
+      - name: Create a new file
+        run: echo "File created on $(date)" > from-actions.txt
+
+      - name: Commit and push
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add from-actions.txt
+          git commit -m "Add file from GitHub Actions"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
