@@ -103,12 +103,12 @@ jobs:
       - name: How do you find GitHub Actions?
         run: |
           echo "How do you find GitHub Actions? ${{ inputs.howDoYouFindGitHubActions }}"
-          echo "You selected: $INPUT_HOW_DO_YOU_FIND_GITHUB_ACTIONS"
+          echo "You selected: $INPUTS_HOW_DO_YOU_FIND_GITHUB_ACTIONS"
       - name: Github event name
         run: |
           echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
           echo "Github event name from environment: $GITHUB_EVENT_NAME"
-      - name: Full github event
+      - name: Full github context
         run: |
           echo "Full github context:"
           echo '${{ toJson(github) }}'
@@ -137,8 +137,6 @@ jobs:
       - name: Show environment
         run: |
           echo "This job is running in the production environment!"
-          echo "Environment: ${{ job.environment }}"
-          echo "Environment URL: ${{ job.environment_url }}"
       - name: Show environment configuation variables
         run: |
           echo "Tool name: ${{ vars.TOOL_NAME}}"
