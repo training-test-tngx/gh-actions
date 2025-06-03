@@ -1,0 +1,85 @@
+# GitHub actions demo for triggers
+name: GitHub Actions Demo 1 - Triggers - TNGX
+run-name: ${{ github.actor }} is learning GitHub Actions! 🚀
+on:
+  # 1.
+  # Trigger on push to feat/* branches
+  # This workflow will run for any branch that starts with "feat/"
+  push:
+    branches:
+      - feat/*
+  # 2.
+  # Trigger on pull requests to main branch
+  # This workflow will run when a pull request is opened, synchronized, or reopened against the feat/* branches
+  pull_request:
+    branches:
+      - feat/*
+  # 2.
+  # Trigger on issues opened, edited, or closed
+  issues:
+    types: [opened, edited, closed]
+  # 2.
+  # Trigger on issue comments created
+  issue_comment:
+    types: [created]
+  # 3.
+  # Trigger on workflow dispatch
+  # ASK participants to comment the push trigger
+  workflow_dispatch:
+    inputs:
+      greeting:
+        description: 'Greeting message'
+        required: false
+        default: 'Hello'
+      name:
+        description: 'What is your name?'
+        required: true
+        default: 'World'
+      feeingGood:
+        description: 'Are you feeling good?'
+        required: false
+        type: boolean
+      howDoYouFindGitHubActions:
+        description: 'How do you find GitHub Actions?'
+        required: false
+        type: choice
+        options:
+          - Awesome
+          - Good
+          - Okay
+          - Not sure yet
+  # 4. Trigger on schedule
+  # schedule:
+  #   - cron: '0 0 * * *' # Every day at midnight UTC
+  #   - cron: '0 9 * * 0' # Every Sunday at 9 AM UTC
+  #   - cron: '0 6 1 4 2' # Every 1st of April at 6 AM UTC, only if it's a Tuesday
+  
+  # 5. Trigger on repository dispatch
+  repository_dispatch:
+    types: [custom-event]
+      
+      
+
+jobs:
+  demo1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello, ${{ github.actor }}!"
+      - name: Say goodbye
+        run: echo "And goodbye!"
+      # 3. Manual trigger
+      - name: Greet user
+        run: echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
+      - name: Feeling good?
+        run: echo "Are you feeling good? ${{ inputs.feeingGood }}"
+      - name: How do you find GitHub Actions?
+        run: echo "How do you find GitHub Actions? ${{ inputs.howDoYouFindGitHubActions }}"
+      - name: Github event name
+        run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Full github event
+        run: |
+          echo "Full github context:"
+          echo '${{ toJson(github) }}'
+      
+      
