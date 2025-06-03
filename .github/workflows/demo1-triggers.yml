@@ -1,5 +1,5 @@
 # GitHub actions demo for triggers
-name: GitHub Actions Demo 1 - Triggers - ${{ github.actor }}
+name: GitHub Actions Demo 1 - Triggers - TNGX
 run-name: ${{ github.actor }} is learning GitHub Actions! 🚀
 on:
   # 1.
