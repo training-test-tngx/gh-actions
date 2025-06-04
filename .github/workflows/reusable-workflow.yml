@@ -11,7 +11,7 @@ on:
         type: string
     outputs:
       greeting-text:
-        value: ${{steps.last-step.outputs.result}}
+        value: ${{jobs.greet-user.outputs.result}}
 
 jobs:
   greet-user:
