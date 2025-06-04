@@ -19,12 +19,16 @@ runs:
   steps:
     - name: Say hello
       run: echo "${{inputs.greeting}}, ${{inputs.name}}!"
+      shell: bash
     - name: Ask how are you
       run: echo "How are you today, ${{inputs.name}}?"
+      shell: bash
     - name: Say goodbye
       run: echo "Have a good day!"
+      shell: bash
     - name: Generate output
       id: last-step
       env:
         RESULT: "${{inputs.greeting}}, ${{inputs.name}}!"
       run: echo "result=$(echo $RESULT)" >> $GITHUB_OUTPUT
+      shell: bash
