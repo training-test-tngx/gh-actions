@@ -16,11 +16,14 @@ on:
 jobs:
   greet-user:
     runs-on: ubuntu-latest
+    outputs:
+      result: ${{steps.last-step.outputs.output-from-step}}
     steps:
       - name: Say hello
         run: echo "${{inputs.greeting}}, ${{inputs.name}}!"
       - name: Ask how are you
         run: echo "How are you today, ${{inputs.name}}?"
       - name: Create output
-        run: echo "result=Have a good day, ${{inputs.name}}" >> $GITHUB_OUTPUT
+        id: last-step
+        run: echo "output-from-step=Have a good day, ${{inputs.name}}" >> $GITHUB_OUTPUT
 
