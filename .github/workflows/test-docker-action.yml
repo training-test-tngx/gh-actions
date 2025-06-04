@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: greeting action step
         id: greeting-step
-        uses: .github/actions/greet-user-docker-action
+        uses: ./.github/actions/greet-user-docker-action
         with:
           greeting: "Good morning"
           name: "Thanh"
