@@ -12,6 +12,7 @@ on:
     outputs:
       greeting-text:
         value: ${{steps.last-step.outputs.result}}
+        type: string
 
 jobs:
   greet-user:
