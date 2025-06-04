@@ -1,5 +1,5 @@
-name: Test reuseable workflow - USERNAME
-run-name: Test reuseable workflow - USERNAME
+name: Test reuseable workflow - THANH
+run-name: Test reuseable workflow - THANH
 
 on:
   workflow_dispatch:
