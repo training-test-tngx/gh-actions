@@ -15,7 +15,8 @@ jobs:
       name: "My friend"
   another-job:
     runs-on: ubuntu-latest
+    needs: call-greeting-workflow
     steps:
       - name: Show output
-        run: echo "${{jobs.call-greeting-workflow.outputs.greeting-text}}"
+        run: echo "${{needs.call-greeting-workflow.outputs.greeting-text}}"
   
