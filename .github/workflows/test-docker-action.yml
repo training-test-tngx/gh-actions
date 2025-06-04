@@ -1,0 +1,19 @@
+name: Test Docker action - THANH
+run-name: Test Docker action - THANH
+
+on:
+  workflow_dispatch:
+
+jobs:
+  greeting-job:
+    runs-on: ubuntu-latest
+    name: A job to greet someone
+    steps:
+      - name: greeting action step
+        id: greeting-step
+        uses: ./.github/actions/greet-docker-action
+        with:
+          greeting: "Good morning"
+          name: "Thanh"
+      - name: Show output from last step
+        run: echo "${{ steps.greeting-step.outputs.greeting-text }}"
