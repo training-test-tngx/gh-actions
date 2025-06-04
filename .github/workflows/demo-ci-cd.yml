@@ -61,7 +61,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: .net-app
+          name: dotnet-webapp
       - name: deloy to staging
         run: echo "Deploying to Staging"
   
@@ -74,6 +74,6 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: .net-app
+          name: dotnet-webapp
       - name: deloy to production
         run: echo "Deploying to production"
