@@ -7,6 +7,9 @@ on:
 jobs:
   call-greeting-workflow:
     uses: ./.github/workflows/reusable-workflow.yml
+    # uses: ./.github/workflows/reusable-workflow.yml@main
+    # uses: ./.github/workflows/reusable-workflow.yml@v1
+    # uses: ./.github/workflows/reusable-workflow.yml@SHA
     with:
       greeting: "Good morning"
       name: "My friend"
