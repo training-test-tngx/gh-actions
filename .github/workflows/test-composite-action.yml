@@ -1,5 +1,5 @@
-name: Test reusable action - THANH
-run-name: Test reusable action - THANH
+name: Test composite action - THANH
+run-name: Test composite action - THANH
 
 on:
   workflow_dispatch:
