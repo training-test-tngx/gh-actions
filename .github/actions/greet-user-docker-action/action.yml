@@ -12,7 +12,7 @@ inputs:
     default: "Thanh"
 outputs:
   greeting-text:
-  description: "Greeting text"
+    description: "Greeting text"
 
 runs:
   using: 'docker'
