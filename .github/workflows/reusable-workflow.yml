@@ -1,0 +1,23 @@
+name: Greet user workflow
+
+on:
+  workflow_call:
+    inputs:
+      greeting:
+        required: true
+        type: string
+      name:
+        required: true
+        type: string
+
+jobs:
+  greet-user:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "${{inputs.greeting}}, ${{inputs.name}}!"
+      - name: Ask how are you
+        run: echo "How are you today, ${{inputs.name}}?"
+      - name: Say goodbye
+        run: echo "Have a good day!"
+
