@@ -1,0 +1,23 @@
+name: Demo environments - THANH
+run-name: Demo environments - THANH
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose environment to deploy"
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+
+jobs:
+  show-environment-variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: App name
+        run: echo "App name = ${{vars.APP_NAME}}"
+      - name: Connect to database
+        run: echo "Connecting to database using ${{secrets.DB_CONNECTION_STRING}}"
+      
