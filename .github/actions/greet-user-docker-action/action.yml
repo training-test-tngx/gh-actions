@@ -1,16 +1,20 @@
 # action.yml
 name: "Greet 
 description: 'Greet someone and record the time'
+
 inputs:
   greeting:
     description: "Greeting"
+    required: true
     default: "Hello"
   name:
     description: "Who to greet"
+    required: true
     default: "Thanh"
 outputs:
   greeting-text:
-    description: "Greeting text"
+  description: "Greeting text"
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
