@@ -1,6 +1,5 @@
-# action.yml
-name: "Greet 
-description: 'Greet someone and record the time'
+name: "Greet someone"
+description: "Greet someone"
 
 inputs:
   greeting:
