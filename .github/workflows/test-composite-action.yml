@@ -1,0 +1,19 @@
+name: Test reusable action - THANH
+run-name: Test reusable action - THANH
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo-composite-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call composite action
+        id: step1
+        uses: ./.github/actions/greet-user-composite-action
+        with:
+          greeting: "Good morning"
+          name: "Thanh"
+      - name: Print output from last step
+        run: echo "${{steps.step1.outputs.full-greeting}}"
+  
