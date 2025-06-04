@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to greet someone
     steps:
+      - uses: actions/checkout@v4
       - name: greeting action step
         id: greeting-step
         uses: ./.github/actions/greet-user-docker-action
