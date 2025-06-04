@@ -9,6 +9,9 @@ on:
       name:
         required: true
         type: string
+    outputs:
+      greeting-text:
+        value: ${{steps.last-step.outputs.result}}
 
 jobs:
   greet-user:
@@ -18,6 +21,6 @@ jobs:
         run: echo "${{inputs.greeting}}, ${{inputs.name}}!"
       - name: Ask how are you
         run: echo "How are you today, ${{inputs.name}}?"
-      - name: Say goodbye
-        run: echo "Have a good day!"
+      - name: Create output
+        run: echo "result=Have a good day, ${{inputs.name}}" >> $GITHUB_OUTPUT
 
