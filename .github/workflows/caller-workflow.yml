@@ -1,0 +1,18 @@
+name: Test reuseable workflow - USERNAME
+run-name: Test reuseable workflow - USERNAME
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-greeting-workflow:
+    uses: ./.github/workflows/reusable-workflow.yml
+    with:
+      greeting: "Good morning"
+      name: "My friend"
+  another-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: another step
+        run: echo "This is the end!"
+  
