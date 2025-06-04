@@ -8,6 +8,7 @@ jobs:
   demo-composite-action:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Call composite action
         id: step1
         uses: ./.github/actions/greet-user-composite-action
